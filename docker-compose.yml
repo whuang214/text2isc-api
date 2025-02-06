@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    env_file:
+      - .env  # Load environment variables from .env
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
