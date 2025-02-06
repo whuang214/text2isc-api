@@ -2,11 +2,11 @@ version: '3.8'
 
 services:
   app:
-    build: .
+    build: . # Build the image from the Dockerfile in the current directory
     ports:
-      - "8000:8000"
+      - "8000:8000" # Forward the exposed port 8000 on the container to port 8000 on the host machine so that we can access the API from the host machine
     volumes:
-      - .:/app
+      - .:/app # Mount the current directory on the host to /app in the container so that changes in the host are reflected in the container
     env_file:
       - .env  # Load environment variables from .env
-    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload # Run the Uvicorn server with the main:app module as the ASGI application, listening on 8000, and reloading on changes
