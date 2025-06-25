@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 import os
+from app.api import isc 
 
 app = FastAPI()
 
@@ -7,7 +8,10 @@ app = FastAPI()
 def read_root():
     print("Someone pinged this API.")
     print("DEEPSEEK_API_KEY:", os.getenv("DEEPSEEK_API_KEY"))
-    return {"message": "Hello, World!"}
+    return {"message": "Hello from the main API!"}
+
+# router for ISC API
+app.include_router(isc.router, prefix="/isc", tags=["ISC"])
 
 if __name__ == "__main__":
     import uvicorn
