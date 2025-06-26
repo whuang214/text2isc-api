@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 import os
-from app.api import isc 
+from app.api import convert 
 
 app = FastAPI()
 
@@ -9,7 +9,7 @@ def read_root():
     return {"message": "Hello from the main API!"}
 
 # router for ISC API
-app.include_router(isc.router, prefix="/isc", tags=["ISC"])
+app.include_router(convert.router, prefix="/convert", tags=["convert"])
 
 if __name__ == "__main__":
     import uvicorn
