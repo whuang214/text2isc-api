@@ -6,8 +6,6 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    print("Someone pinged this API.")
-    print("DEEPSEEK_API_KEY:", os.getenv("DEEPSEEK_API_KEY"))
     return {"message": "Hello from the main API!"}
 
 # router for ISC API
