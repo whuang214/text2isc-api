@@ -8,12 +8,7 @@ from app.model.event import TextInput, EventData
 
 router = APIRouter()
 
-# convert root endpoint
-@router.get("/")
-async def root():
-    return {"message": "Hello from convert route!"}
-
-# just to test JSON output
+# json endpoint to convert text to event json
 @router.post("/json")
 async def convert_to_json(input: TextInput):
     event_data = convert_text_to_event(input.event_details)

@@ -1,6 +1,7 @@
 from urllib.parse import quote
 from dateutil import parser
 
+# converts ISO-8601 datetime string to Google Calendar format (YYYYMMDDTHHMMSSZ)
 def iso_to_gcal(dt_str):
     # Google Calendar needs UTC or "floating" (no offset). Let's use UTC (Z)
     dt = parser.isoparse(dt_str)
@@ -8,6 +9,7 @@ def iso_to_gcal(dt_str):
     dt_utc = dt.astimezone(tz=None).astimezone(tz=None).replace(tzinfo=None) if dt.tzinfo else dt
     return dt_utc.strftime('%Y%m%dT%H%M%SZ')
 
+# creates a Google Calendar event link from event dict
 def create_google_calendar_link(event: dict) -> str:
     title = event.get("summary", "Event")
     start = iso_to_gcal(event.get("start", ""))

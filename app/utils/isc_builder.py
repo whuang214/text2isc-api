@@ -1,10 +1,12 @@
 from datetime import datetime, timezone
 from dateutil import parser
 
+# converts ISO-8601 datetime string to ICS format (YYYYMMDDTHHMMSS)
 def iso_to_ics(dt_str):
     dt = parser.isoparse(dt_str)
     return dt.strftime('%Y%m%dT%H%M%S')
 
+# converts event dict to ICS format string
 def event_dict_to_ics(event: dict) -> str:
     summary = event.get("summary", "Event")
     description = event.get("description", "")
