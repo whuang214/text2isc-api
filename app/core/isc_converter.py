@@ -8,6 +8,7 @@ client = OpenAI(
 )
 
 def convert_text_to_isc(text: str) -> str:
+    print(f"String to convert: {text}")
     messages = [
         # {
         #     "role": "system", 
