@@ -7,7 +7,7 @@ text2isc is a FastAPI-based service that converts natural-language event descrip
 ## Prerequisites
 
 - [Docker](https://www.docker.com/get-started)
-- An OpenRouter API key (set `OPENROUTER_API_KEY` in your environment or docker-compose file)
+- An OpenRouter API key (set `OPENROUTER_API_KEY` in .env file)
 
 ## Quick Start (with Docker Compose)
 
