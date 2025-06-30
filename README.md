@@ -35,8 +35,6 @@ An API that turns unstructured event announcements into ready-to-import calendar
 **📝 Note:**  
 You do **not** need Docker to run text2isc. All dependencies are listed in `requirements.txt`. Works with Python 3.10+.
 
-```
-
 ## How to Use
 
 ### 1. Convert Free-Form Text → JSON
@@ -59,6 +57,7 @@ Organizer: John Smith john.smith@example.com
 
 - **Endpoint:** `POST /convert/json`
 - **Request Body (after parsing):**
+
 ```
 
 {
@@ -66,7 +65,9 @@ Organizer: John Smith john.smith@example.com
 }
 
 ```
+
 - **Response Example:**
+
 ```
 
 {
@@ -93,6 +94,7 @@ Organizer: John Smith john.smith@example.com
 - **Endpoint:** `POST /convert/google_calendar`
 - **Request Body:** Same JSON as above
 - **Response Example:**
+
 ```
 
 {
@@ -117,4 +119,7 @@ Open [http://localhost:8000/docs](http://localhost:8000/docs) for a full interac
 - `app/model/event.py` – Data models
 - `app/utils/isc_builder.py` – ICS generator
 - `app/utils/calendar_links.py` – Google Calendar link generator
+
+```
+
 ```
