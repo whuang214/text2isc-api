@@ -42,7 +42,7 @@ RULES & HEURISTICS:\n\
 
 # converts 
 def convert_text_to_event(event_text: str) -> dict:
-    print(f"String to convert: {event_text}")
+    # print(f"String to convert: {event_text}")
 
     messages = [
     SYSTEM_PROMPT,
