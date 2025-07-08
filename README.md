@@ -119,7 +119,3 @@ Open [http://localhost:8000/docs](http://localhost:8000/docs) for a full interac
 - `app/model/event.py` – Data models
 - `app/utils/isc_builder.py` – ICS generator
 - `app/utils/calendar_links.py` – Google Calendar link generator
-
-```
-
-```
