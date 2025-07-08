@@ -8,6 +8,10 @@ app = FastAPI()
 is_production = os.getenv("PRODUCTION") == "true"
 frontend_url = os.getenv("FRONT_END_URL")
 
+print("PRODUCTION:", os.getenv("PRODUCTION"))
+print("is_production:", is_production)
+print("FRONT_END_URL:", frontend_url)
+
 allowed_origins = [frontend_url] if is_production and frontend_url else ["*"]
 
 app.add_middleware(
