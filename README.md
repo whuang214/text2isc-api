@@ -2,6 +2,8 @@
 
 An API that turns unstructured event announcements into ready-to-import calendar events.
 
+The frontend web app for **text2isc** is available [here](https://github.com/whuang214/text2isc-client)
+
 ## Prerequisites
 
 - [Docker](https://www.docker.com/get-started)
