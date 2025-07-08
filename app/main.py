@@ -19,7 +19,7 @@ if is_production:
 else:
     allowed_origins = ["*"]
 
-print(f"Allowed origins: {allowed_origins}")
+# print(f"Allowed origins: {allowed_origins}")
 
 app.add_middleware(
     CORSMiddleware,
