@@ -54,7 +54,7 @@ def convert_text_to_event(event_text: str) -> dict:
 
 
     completion = client.chat.completions.create(
-        model="deepseek/deepseek-r1-0528-qwen3-8b:free",  # any model from https://openrouter.ai/models
+        model="deepseek/deepseek-chat-v3-0324:free",  # any model from https://openrouter.ai/models
         messages=messages,
         extra_headers={
             # for tracking purposes
