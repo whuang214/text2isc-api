@@ -32,7 +32,7 @@ Convert free-form text into structured JSON.
 Generate a downloadable .ics calendar file from JSON.
 
 **Example Request**
-```
+```json
 {
   "summary": "Team Meeting",
   "start": "2025-09-03T10:00:00-04:00",
