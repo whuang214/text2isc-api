@@ -1,13 +1,12 @@
 # text2isc
 
+![text2isc Demo](https://i.imgur.com/WKeBB9P.png)
+
 text2isc is a smart API that instantly transforms unstructured event announcements into ready-to-import calendar events—perfect for saving time and reducing manual entry.
 
 **Deployed App:** https://text2isc.vercel.app/
 
 **Frontend Repo:** https://github.com/whuang214/text2isc-client
-
-## 📸 Screenshot
-![text2isc Demo](https://i.imgur.com/WKeBB9P.png)
 
 ## Why I Built This
 - **Problem:** Adding events from emails or flyers to your calendar is tedious and error-prone.
