@@ -8,22 +8,71 @@ text2isc is a smart API that instantly transforms unstructured event announcemen
 
 **Frontend Repo:** https://github.com/whuang214/text2isc-client
 
+## Routes
+
+### 1. POST `/json`
+Convert free-form text into structured JSON.
+
+**Example Request**
+```json
+{ "event_details": "Dinner with Sam next Tue 7pm at Row 34, Boston" }
+```
+
+**Example Reponse**
+```json
+{
+  "summary": "Dinner with Sam",
+  "start": "2025-09-02T19:00:00-04:00",
+  "end": "2025-09-02T20:30:00-04:00",
+  "location": "Row 34, Boston"
+}
+```
+
+### 2. POST `/isc`
+Generate a downloadable .ics calendar file from JSON.
+
+**Example Request**
+```
+{
+  "summary": "Team Meeting",
+  "start": "2025-09-03T10:00:00-04:00",
+  "end": "2025-09-03T11:00:00-04:00",
+  "location": "Zoom",
+  "description": "Sprint planning"
+}
+```
+
+**Example Response**
+
+Content-Type: `text/calendar`
+Download: `Team_Meeting.ics`
+
+### 3. POST `/google_calendar`
+
+Create a one-click Google Calendar event link.
+
+**Example Request**
+```json
+{
+  "summary": "Team Meeting",
+  "start": "2025-09-03T10:00:00-04:00",
+  "end": "2025-09-03T11:00:00-04:00",
+  "location": "Zoom",
+  "description": "Sprint planning"
+}
+```
+
+**Example Response**
+
+```json
+{
+  "google_calendar_link": "https://calendar.google.com/calendar/render?...Team+Meeting..."
+}
+```
+
 ## Why I Built This
 - **Problem:** Adding events from emails or flyers to your calendar is tedious and error-prone.
 - **Solution:** text2isc uses LLMs to extract details from raw event text, then generates ready-to-import ICS files or Google Calendar links in seconds.
-- **My Role:** Designed and built the API and data pipeline from scratch (FastAPI, Python, Docker), including natural language parsing, data modeling, and integrations.
-
-## What It Does
-1. **Text → JSON:** Convert free-form event blurbs into structured JSON (summary, datetime, location, etc.)
-2. **JSON → ICS:** Generate a downloadable `.ics` calendar file
-3. **JSON → Google Calendar:** Produce a one-click Google Calendar event link
-4. **Interactive API:** Explore endpoints via auto-generated OpenAPI docs at `/docs`
-
-## Key Features
-- **Universal Parsing:** Handles dates, times, timezones, locations, descriptions, and organizer info
-- **Multi-format Output:** JSON, ICS, and Google Calendar link
-- **Developer Friendly:** Dockerized with clear OpenAPI schema and robust error handling
-- **Extensible & Portable:** Run locally with Python 3.10+ or in any container environment
 
 ## Tech Stack
 | Layer      | Technology                    |
@@ -34,9 +83,3 @@ text2isc is a smart API that instantly transforms unstructured event announcemen
 | Calendar   | ICS builder & link generator  |
 | Frontend   | React (text2isc-client)       |
 | Hosting    | Vercel (frontend), Heroku (API) |
-
-## Recruiter Highlights
-- **End-to-End Ownership:** From prompt engineering to deployment
-- **LLM Integration:** Real-world text parsing powered by generative AI
-- **Production-Ready:** Containerized, documented, and scalable
-- **User-Centric:** Fast, accurate, and easy to integrate into any workflow
